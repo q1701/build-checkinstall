@@ -16,7 +16,7 @@ Scripts
 
 * `build` : Build a image 'q1701/build-checkinstall-centos6'.
 * `run` : Create and start a container 'build-checkinstall-centos6.', 
-and a RPM file will be created in './out' directory.
+and a RPM file will be created in './share' directory.
 
 Notice
 ------
