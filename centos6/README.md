@@ -1,5 +1,5 @@
-centos-build-checkinstall
-=========================
+build-checkinstall-centos6
+==========================
 
 Build a RPM package of the latest version of 'checkinstall' automatically.
 
@@ -7,15 +7,15 @@ Description
 -----------
 
 * Base image : centos:centos6
-* Image : q1701/centos-build-checkinstall
-* Container : centos-build-checkinstall
+* Image : q1701/build-checkinstall-centos6
+* Container : build-checkinstall-centos6
 * Output directory : ./share
 
 Scripts
 -------
 
-* `build` : Build a image 'q1701/centos-build-checkinstall'.
-* `run` : Create and start a container 'centos-build-checkinstall.', 
+* `build` : Build a image 'q1701/build-checkinstall-centos6'.
+* `run` : Create and start a container 'build-checkinstall-centos6.', 
 and a RPM file will be created in './out' directory.
 
 Notice

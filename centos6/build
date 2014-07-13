@@ -1,4 +1,4 @@
 #!/bin/sh
-IMAGE_NAME="q1701/centos-build-checkinstall"
+IMAGE_NAME="q1701/build-checkinstall-centos6"
 STAGE_DIR="./stage"
 docker build -t $IMAGE_NAME $STAGE_DIR
