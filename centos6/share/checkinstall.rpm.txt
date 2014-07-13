@@ -1,0 +1,2 @@
+### [Set "RPM" as a default package type.]
+### http://d.hatena.ne.jp/akishin999/20130220/1361316887

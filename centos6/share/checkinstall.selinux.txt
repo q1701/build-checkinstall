@@ -1,0 +1,2 @@
+### [Exclude "/selinux" by default. (--exclude=/selinux)]
+### http://checkinstall.izto.org/cklist/msg00776.html

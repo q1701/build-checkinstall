@@ -1,0 +1,2 @@
+### [Include 'checkinstallrc' into the checkinstall's rpm file.]
+### http://qiita.com/hnakamur/items/55ed1bc496b2e72a5ca6

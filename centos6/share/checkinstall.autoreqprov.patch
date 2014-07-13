@@ -1,0 +1,63 @@
+diff --git a/checkinstall b/checkinstall
+index a3917a4..0a23b49 100755
+--- a/checkinstall
++++ b/checkinstall
+@@ -150,6 +150,7 @@ function usage() {
+    echog "--pkgaltsource=<altsource>     Set alternate source location"
+    echog "--pakdir=<directory>           The new package will be saved here"
+    echog "--maintainer=<email addr>      The package maintainer (.deb)"
++   echog "--autoreqprov=<yes|no>         Enable/Disable automatic dependency processing"
+    echog "--provides=<list>              Features provided by this package"
+    echog "--requires=<list>              Features required by this package"
+    echog "--conflicts=<list>             Packages that this package cannot be installed with (.deb)"
+@@ -506,7 +507,7 @@ fi
+ # Arguments parsing
+ 
+ CKNAME=`basename "$0"`
+-PARAMS=`getopt -a -n $CKNAME -o +d:DA:t:RShHy -l arch:,type:,si,showinstall::,ss,showslack::,deldoc::,delspec::,deldesc::,strip::,addso::,install::,stripso::,gzman::,bk,backup::,autodoinst::,reset-uids::,fstrans::,spec:,exclude:,include:,pkgname:,pkgversion:,pkgrelease:,pkglicense:,pkggroup:,pkgsource:,pkgaltsource:,pakdir:,docdir:,requires:,provides:,conflicts:,replaces:,maintainer:,dpkgflags:,rpmflags:,pkgarch:,umask:,with-tar:,inspect,review-spec,review-control,newslack,help,nodoc,rpmi,rpmu,version,copyright,default -- "$@"`
++PARAMS=`getopt -a -n $CKNAME -o +d:DA:t:RShHy -l arch:,type:,si,showinstall::,ss,showslack::,deldoc::,delspec::,deldesc::,strip::,addso::,install::,stripso::,gzman::,bk,backup::,autodoinst::,reset-uids::,fstrans::,spec:,exclude:,include:,pkgname:,pkgversion:,pkgrelease:,pkglicense:,pkggroup:,pkgsource:,pkgaltsource:,pakdir:,docdir:,requires:,provides:,conflicts:,replaces:,autoreqprov:,maintainer:,dpkgflags:,rpmflags:,pkgarch:,umask:,with-tar:,inspect,review-spec,review-control,newslack,help,nodoc,rpmi,rpmu,version,copyright,default -- "$@"`
+ 
+ [ $? -gt 0 ] && help_notice
+ 
+@@ -593,6 +594,17 @@ while [ "$1" != "--" ]; do
+          shift
+          REQUIRES=`eval echo $1`
+          ;;
++      --autoreqprov)
++         shift
++         case `eval echo $1` in
++            1|yes|'')
++               AUTOREQPROV="yes";;
++            0|no)
++               AUTOREQPROV="no";;
++            *)
++               boolean_usage "--autoreqprov" $1
++         esac
++         ;;
+       --maintainer)
+          shift
+          MAINTAINER=`eval echo $1`
+@@ -1262,6 +1274,7 @@ if [ -f "$SPEC_PATH" ]; then
+    PKG_GROUP=`getparameter "^[Gg]roup"`
+    PROVIDES=`getparameter "^[Pp]rovides"`
+    REQUIRES=`getparameter "^[Rr]equires"`
++   AUTOREQPROV=`getparameter "^[Aa]utoReqProv:"`
+ fi
+       
+    OPTION=junk
+@@ -1360,6 +1373,7 @@ fi
+       ! [ "$ALTSOURCE" ] && ALTSOURCE=""
+       ! [ "$PROVIDES" ] && PROVIDES="$NAME"
+       ! [ "$REQUIRES" ] && REQUIRES=""
++      ! [ "$AUTOREQPROV" ] && AUTOREQPROV="yes"
+       # bond: added this so it is easy to change the Maintainer: field
+       # just by setting the MAINTAINER environment variable
+ 
+@@ -2386,6 +2400,7 @@ Group:     $PKG_GROUP
+ BuildRoot: $BROOTPATH
+ Provides:  $PROVIDES
+ Requires:  $REQUIRES,/bin/sh
++AutoReqProv: $AUTOREQPROV
+ 
+ %description
+ EOF
