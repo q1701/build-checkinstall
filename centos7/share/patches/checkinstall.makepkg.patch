@@ -1,0 +1,13 @@
+diff --git a/checkinstallrc-dist b/checkinstallrc-dist
+index d4feb4e..f2936ff 100644
+--- a/checkinstallrc-dist
++++ b/checkinstallrc-dist
+@@ -23,7 +23,7 @@ INSTALLWATCH=${INSTALLWATCH_PREFIX}/bin/installwatch
+ # included with checkinstall. If you want to use Slackware's native "makepkg"
+ # then set this to "makepkg"
+ 
+-MAKEPKG=/sbin/makepkg
++MAKEPKG=
+ 
+ # makepkg optional flags. These are recommended if running a newer Slackware
+ # version: "-l y -c n"

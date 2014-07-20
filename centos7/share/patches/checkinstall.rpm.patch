@@ -1,0 +1,13 @@
+diff --git a/checkinstallrc-dist b/checkinstallrc-dist
+index 9d6d640..d6d06cb 100644
+--- a/checkinstallrc-dist
++++ b/checkinstallrc-dist
+@@ -49,7 +49,7 @@ ARCHITECTURE=""
+ #   R : RPM
+ #   D : Debian
+ 
+-INSTYPE=""
++INSTYPE="R"
+ 
+ # Storage directory for newly created packages
+ # By default they will be stored at the default

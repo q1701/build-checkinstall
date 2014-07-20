@@ -1,0 +1,2 @@
+### [Changed setting not to use Slackware's native "makepkg".]
+### http://blog.toor.jp/2012/03/checkinstall_on_centos-6-2-64bit/

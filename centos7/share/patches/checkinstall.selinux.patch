@@ -1,0 +1,13 @@
+diff --git a/checkinstallrc-dist b/checkinstallrc-dist
+index f2936ff..9d6d640 100644
+--- a/checkinstallrc-dist
++++ b/checkinstallrc-dist
+@@ -117,7 +117,7 @@ RESET_UIDS=0
+ NEW_SLACK=1
+ 
+ # Comma delimited list of files/directories to be ignored
+-EXCLUDE=""
++EXCLUDE="/selinux"
+ 
+ # Accept default values for all questions?
+ ACCEPT_DEFAULT=0

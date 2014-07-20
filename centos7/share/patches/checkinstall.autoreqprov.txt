@@ -1,0 +1,2 @@
+### [Add a option "autoreqprov" to turn on/off automatic dependencies feature of the RPM.]
+### http://checkinstall.izto.org/cklist/msg00574.html

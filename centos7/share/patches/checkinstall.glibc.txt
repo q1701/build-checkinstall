@@ -1,0 +1,2 @@
+### [Support glibc >= 2.14]
+### http://blog.bsdhack.org/index.cgi/Computer/20140522.htm

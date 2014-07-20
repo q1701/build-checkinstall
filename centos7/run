@@ -1,0 +1,7 @@
+#!/bin/sh
+IMAGE_NAME="q1701/build-checkinstall-centos7"
+CONTAINER_NAME="build-checkinstall-centos7"
+VOLUME_SHARE_HOST=$(dirname $(readlink -e $0))/share
+VOLUME_SHARE_CONTAINER=/mnt/share
+VOLUME_SHARE_MODE=rw
+docker run -t --env="VOLUME_SHARE_CONTAINER=$VOLUME_SHARE_CONTAINER" -v $VOLUME_SHARE_HOST:$VOLUME_SHARE_CONTAINER:$VOLUME_SHARE_MODE --name $CONTAINER_NAME $IMAGE_NAME

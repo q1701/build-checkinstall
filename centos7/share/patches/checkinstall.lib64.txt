@@ -1,0 +1,2 @@
+### [Change installation directory of installwatch.so to /usr/local/lib64 on a 64bit system.]
+### http://d.hatena.ne.jp/pcmaster/20120916/p1
