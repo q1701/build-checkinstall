@@ -43,11 +43,11 @@ patch -p1 -d . < $PATCH_DIR/checkinstall.autoreqprov.patch
 ## [Include 'checkinstallrc' into the checkinstall's rpm file.]
 ## http://qiita.com/hnakamur/items/55ed1bc496b2e72a5ca6
 patch -p1 -d . < $PATCH_DIR/checkinstall.rc.patch
-### [Support glibc >= 2.17]
-### http://blog.bsdhack.org/index.cgi/Computer/20140522.htm
+## [Support glibc >= 2.17]
+## http://blog.bsdhack.org/index.cgi/Computer/20140522.htm
 patch -p1 -d . < $PATCH_DIR/checkinstall.glibc.patch
-# [A temporary patch to include symbolic links to directories into RPM file]
-# http://blog.bsdhack.org/index.cgi/Computer/20140523.html
+## [A temporary patch to include symbolic links to directories into RPM file]
+## http://blog.bsdhack.org/index.cgi/Computer/20140523.html
 patch -p1 -d . < $PATCH_DIR/checkinstall.symlinkdir.patch
 
 # Make and install
