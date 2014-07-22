@@ -1,0 +1,2 @@
+# [A temporary patch to include symbolic links to directories into RPM file]
+# http://blog.bsdhack.org/index.cgi/Computer/20140523.html
