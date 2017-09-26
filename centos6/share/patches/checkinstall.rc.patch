@@ -1,12 +1,12 @@
 diff --git a/Makefile b/Makefile
-index 054421b..95b9a87 100644
+index 72ccf9d..58bb408 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -37,22 +37,8 @@ install: all
+@@ -39,22 +39,8 @@ install: all
  	
  	mkdir -p $(CONFDIR)
  	install -m644  checkinstallrc-dist $(CONFDIR)
--	if ! [ -f $(CONFDIR)/checkinstallrc ]; then \
+-	@if ! [ -f $(CONFDIR)/checkinstallrc ]; then \
 -		cp $(CONFDIR)/checkinstallrc-dist $(CONFDIR)/checkinstallrc; \
 -	else \
 -		echo; \
@@ -26,4 +26,4 @@ index 054421b..95b9a87 100644
 +	install -m644  checkinstallrc $(CONFDIR)
  	
  clean:
- 	for file in locale/checkinstall-*.mo ; do \
+ 	for file in locale/checkinstall-*.mo checkinstall ; do \

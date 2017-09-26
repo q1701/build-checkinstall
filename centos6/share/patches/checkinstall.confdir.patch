@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 2e28adc..054421b 100644
+index 71e4da3..72ccf9d 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -4,7 +4,7 @@
@@ -11,15 +11,15 @@ index 2e28adc..054421b 100644
  
  all:
  	for file in locale/checkinstall-*.po ; do \
-diff --git a/checkinstall b/checkinstall
-index 978360f..a3917a4 100755
---- a/checkinstall
-+++ b/checkinstall
-@@ -492,7 +492,7 @@ function copy_dir_hierarchy {
+diff --git a/checkinstall.in b/checkinstall.in
+index 66c9cd0..2a53ca3 100755
+--- a/checkinstall.in
++++ b/checkinstall.in
+@@ -500,7 +500,7 @@ function copy_dir_hierarchy {
  ckversion
  echo
  
--CHECKINSTALLRC=${CHECKINSTALLRC:-${INSTALLDIR}/checkinstallrc}
+-CHECKINSTALLRC=${CHECKINSTALLRC:-${INSTALLDIR}/lib/checkinstall/checkinstallrc}
 +CHECKINSTALLRC="$INSTALLDIR/etc/checkinstallrc"
  if ! [ -f $CHECKINSTALLRC ]; then
     echog "The checkinstallrc file was not found at:\n$CHECKINSTALLRC"

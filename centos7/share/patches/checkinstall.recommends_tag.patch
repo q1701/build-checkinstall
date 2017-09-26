@@ -1,0 +1,13 @@
+diff --git a/checkinstall.in b/checkinstall.in
+index 98b8f16..cf63fc0 100755
+--- a/checkinstall.in
++++ b/checkinstall.in
+@@ -2442,8 +2442,6 @@ Group:     $PKG_GROUP
+ BuildRoot: $BROOTPATH
+ Provides:  $PROVIDES
+ Requires:  $REQUIRES,/bin/sh
+-Recommends: $RECOMMENDS
+-Suggests:  $SUGGESTS
+ AutoReqProv: $AUTOREQPROV
+ 
+ %description

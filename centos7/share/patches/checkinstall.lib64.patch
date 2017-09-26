@@ -1,5 +1,5 @@
 diff --git a/installwatch/Makefile b/installwatch/Makefile
-index ae34fc1..e0a8b28 100644
+index 4c7eb36..40a8830 100644
 --- a/installwatch/Makefile
 +++ b/installwatch/Makefile
 @@ -11,7 +11,12 @@ PREFIX=/usr/local

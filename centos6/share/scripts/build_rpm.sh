@@ -46,6 +46,8 @@ patch -p1 -d . < $PATCH_DIR/checkinstall.rc.patch
 ## [A temporary patch to include symbolic links to directories into RPM file]
 ## http://blog.bsdhack.org/index.cgi/Computer/20140523.html
 patch -p1 -d . < $PATCH_DIR/checkinstall.symlinkdir.patch
+## [Do not add 'Recommends:' and 'Suggests:' tags to rpm spec file]
+patch -p1 -d . < $PATCH_DIR/checkinstall.recommends_tag.patch
 
 # Make and install
 make install

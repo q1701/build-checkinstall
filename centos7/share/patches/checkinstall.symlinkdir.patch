@@ -1,13 +1,14 @@
-diff --git a/checkinstall b/checkinstall
-index 978360f..69a0344 100755
---- a/checkinstall
-+++ b/checkinstall
-@@ -2428,7 +2428,7 @@ EOF
+diff --git a/checkinstall.in b/checkinstall.in
+index 98b8f16..27476cb 100755
+--- a/checkinstall.in
++++ b/checkinstall.in
+@@ -2487,7 +2487,8 @@ EOF
  # Prepare directories to be included in the .spec file
  mv ${TMP_DIR}/newfiles ${TMP_DIR}/newfiles.tmp
  cat ${TMP_DIR}/newfiles.tmp | while read line; do
 -   [ -d "${BUILD_DIR}/${line}" -o -L "${BUILD_DIR}/${line}" ] && echo -n "%dir " >> ${TMP_DIR}/newfiles
-+   [ -d "${BUILD_DIR}/${line}" ] && echo -n "%dir " >> ${TMP_DIR}/newfiles
++   [ -d "${BUILD_DIR}/${line}"  ] && echo -n "%dir " >> ${TMP_DIR}/newfiles
++   [ -L "${BUILD_DIR}/${line} -a -d `ls -l ${BUILD_DIR}/${line} | awk '$0=$NF'` ] && echo -n "%dir" >> ${TMP_DIR}/newfiles" ]
     echo "\"/${line}\"" >> ${TMP_DIR}/newfiles
  done
  
